@@ -5,7 +5,6 @@ Simple Blog Application where user can read or create new posts, check post's au
 ## Stack
 
 Language: HTML5, CSS3, JS(ES6+) <br/>
-Framework: React <br/>
-Library: Materialize <br/>
+Library: React, Materialize <br/>
 Package Manager: npm <br/>
 Deployment: GitHub Pages 
