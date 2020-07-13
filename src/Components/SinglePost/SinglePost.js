@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from  './SinglePost.module.css';
 
-import { postService } from '../../Services/PostService';
-import { authorService } from '../../Services/AuthorService';
+import { postService } from '../../services/PostService';
+import { authorService } from '../../services/AuthorService';
 import { Row, Col, Container, Card, Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { Post } from '../Home/Post';

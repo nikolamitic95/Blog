@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Authors.module.css';
 
 import { Header } from '../Header/Header';
-import { authorService } from '../../Services/AuthorService';
+import { authorService } from '../../services/AuthorService';
 import { Author } from './Author';
 import { Container } from 'react-materialize';
 import { Link } from 'react-router-dom';

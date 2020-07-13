@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Authors.module.css';
 
 import { Row, Col, Collection, CollectionItem } from 'react-materialize';
-import { authorService } from '../../Services/AuthorService';
+import { authorService } from '../../services/AuthorService';
 
 class Author extends React.Component {
   constructor() {

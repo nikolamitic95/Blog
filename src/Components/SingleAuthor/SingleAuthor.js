@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './SingleAuthor.module.css'
 
-import { authorService } from '../../Services/AuthorService';
+import { authorService } from '../../services/AuthorService';
 import { Container } from 'react-materialize';
 import { AuthorInfo } from './AuthorComponents/AuthorInfo';
 import { AuthorAddress } from './AuthorComponents/AuthorAddress';
