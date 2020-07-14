@@ -1,4 +1,7 @@
 import React from 'react';
+
+import styles from './Posts.module.css';
+
 import { Row, Col, Card, Icon } from 'react-materialize';
 
 const Post = ({ title, body }) => {
@@ -9,7 +12,7 @@ const Post = ({ title, body }) => {
                 s={12}
             >
                 <Card
-                    className="blue-grey darken-1"
+                    className={`${styles.card} blue-grey darken-1`}
                     closeIcon={<Icon>close</Icon>}
                     revealIcon={<Icon>more_vert</Icon>}
                     textClassName="white-text"

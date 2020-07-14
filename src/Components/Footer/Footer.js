@@ -1,22 +1,23 @@
 import React from 'react';
-import StickyFooter from 'react-sticky-footer';
+import styles from './Footer.module.css';
 
-const FooterHome = () => {
+import { Navbar } from 'react-bootstrap';
+
+const Footer = () => {
     return (
-        <StickyFooter
-    bottomThreshold={50}
-    normalStyles={{
-    backgroundColor: "#999999",
-    padding: "2rem"
-    }}
-    normalStyles={{
-    backgroundColor: "rgba(255,255,255,.8)",
-    padding: "2rem"
-    }}
->
-    Add any footer markup here
-</StickyFooter>
+        <Navbar className={`${styles.footer} justify-content-center`} >
+            <Navbar.Brand className={styles.name}>
+                <img
+                    alt=""
+                    src="/logo.svg"
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                />{' '}
+         Copyright &copy; 2020, by Nikola Mitić
+      </Navbar.Brand>
+        </Navbar>
     )
 }
 
-export { FooterHome };
+export { Footer }

@@ -25,7 +25,7 @@ class Author extends React.Component {
           m={12}
           s={12}
         >
-          <Collection>
+          <Collection className={style.card}>
             <CollectionItem className={`${style.link} teal`}
             >
               {`${this.props.name} (${this.state.posts.length})`}

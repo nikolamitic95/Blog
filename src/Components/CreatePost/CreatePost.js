@@ -4,8 +4,7 @@ import style from './CreatePost.module.css';
 
 import { Header } from '../Header/Header';
 import { TextInput, Textarea, Container, Icon, Button } from 'react-materialize';
-import { Link } from 'react-router-dom';
-
+import { postService } from '../../services/PostService';
 
 
 class CreatePost extends React.Component {
@@ -15,37 +14,20 @@ class CreatePost extends React.Component {
         this.state = {
             title: '',
             post: ''
-        };
-        this.submitHandler = this.submitHandler.bind(this);
-        this.changeHandler = this.changeHandler.bind(this);
-        this.resetButton = this.resetButton.bind(this);
+        }
     }
 
-    submitHandler(event) {
+    submitHandler = (event) => {
         event.preventDefault()
-        console.log(this.state)
-
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: this.state.title,
-                body: this.state.post
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-
-
+        postService.post(this.state.title, this.state.post)
+        this.props.history.push('/')
     }
 
-    changeHandler(event) {
+    changeHandler = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
-    
-    resetButton() {
+
+    resetButton = () => {
         this.setState({
             title: '',
             post: ''
@@ -54,7 +36,7 @@ class CreatePost extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={style.form}>
                 <Header />
                 <Container>
                     <h4 className={style.title}>NEW POST</h4>
@@ -87,7 +69,7 @@ class CreatePost extends React.Component {
                             >
                                 Cancel
                              </Button>
-                            <Link to='/'> <Button
+                            <Button
                                 onClick={this.submitHandler}
                                 type="submit"
                                 large
@@ -96,7 +78,7 @@ class CreatePost extends React.Component {
                                 waves="light"
                             >
                                 Save
-                            </Button> </Link>
+                            </Button>
                         </div>
                     </form>
                 </Container>

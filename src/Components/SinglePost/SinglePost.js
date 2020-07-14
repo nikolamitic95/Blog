@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from  './SinglePost.module.css';
+import styles from './SinglePost.module.css';
 
 import { postService } from '../../services/PostService';
 import { authorService } from '../../services/AuthorService';
@@ -8,7 +8,6 @@ import { Row, Col, Container, Card, Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { Post } from '../Home/Post';
 import { Header } from '../Header/Header';
-import { FaChevronCircleDown, FaBackward, FaBlogger, FaUser } from 'react-icons/fa';
 
 class SinglePost extends React.Component {
     constructor(props) {
@@ -35,15 +34,24 @@ class SinglePost extends React.Component {
             <div>
                 <Header />
                 <Container>
-
-                    <h4 className={styles.title}><FaBlogger /> SINGLE POST</h4>
-                    <Link to={`/authors/singleauthor/${this.state.singlePost.userId}`}><h5 className={styles.link}><FaUser /> Author</h5></Link>
+                    <Row>
+                        <Col>
+                            <Link className={styles.link} to="/">
+                                <h5 className={styles.back}><i class='fas fa-angle-double-left'></i>  Back</h5>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <h4 className={styles.title}>​<i class='fab fa-blogger-b'></i> SINGLE POST</h4>
+                    <Link className={styles.link} to={`/authors/singleauthor/${this.state.singlePost.userId}`}>
+                        <h5 className={styles.authors}><i class='fas fa-user'></i> Author <i class='fas fa-angle-double-right'></i></h5>
+                    </Link>
                     <Row>
                         <Col
                             m={12}
                             s={12}
                         >
-                            <Link to="/"><h6><FaBackward />   Back</h6></Link>
                             <Card
                                 className={` ${styles.card} blue-grey darken-1`}
                                 closeIcon={<Icon>close</Icon>}
@@ -57,7 +65,7 @@ class SinglePost extends React.Component {
                             </Card>
                         </Col>
                     </Row>
-                    <h5 className={styles.more}><FaChevronCircleDown />  3 MORE POSTS FROM SAME AUTHOR</h5>
+                    <h5 className={styles.more}><i class='fas fa-angle-double-down'></i>  3 MORE POSTS FROM SAME AUTHOR</h5>
                     {this.state.authorPosts.slice(0, 3).map(post =>
                         <Post
                             id={post.id}

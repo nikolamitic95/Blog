@@ -3,13 +3,12 @@ import React from 'react';
 import styles from './SingleAuthor.module.css'
 
 import { authorService } from '../../services/AuthorService';
-import { Container } from 'react-materialize';
+import { Container, Row, Col } from 'react-materialize';
 import { AuthorInfo } from './AuthorComponents/AuthorInfo';
 import { AuthorAddress } from './AuthorComponents/AuthorAddress';
 import { AuthorCompany } from './AuthorComponents/AuthorCompany';
 import { Header } from '../Header/Header';
-import { FaUser } from 'react-icons/fa'
-
+import { Link } from 'react-router-dom'
 
 class SingleAuthor extends React.Component {
     constructor(props) {
@@ -31,7 +30,16 @@ class SingleAuthor extends React.Component {
             <div>
                 <Header />
                 <Container>
-                    <h4 className={styles.title}><FaUser /> SINGLE AUTHOR</h4>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <Link className={styles.link} to='/authors'>
+                                    <h5 className={styles.back}><i class='fas fa-angle-double-left'></i> Back</h5>
+                                </Link>
+                            </Col>
+                        </Row>
+                    </Container>
+                    <h4 className={styles.title}>​<i class='fas fa-user'></i> SINGLE AUTHOR</h4>
                     <AuthorInfo
                         key={this.state.singleAuthor.id}
                         name={this.state.singleAuthor.authorName}

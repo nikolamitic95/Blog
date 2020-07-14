@@ -6,3 +6,6 @@
 .link{
     color: white;
 }
+.card:hover{
+    box-shadow: 0px 10px 15px 1px #009688 !important;
+}
