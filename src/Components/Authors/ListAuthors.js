@@ -27,7 +27,7 @@ class ListAuthors extends React.Component {
             <div>
                 <Header />
                 <Container>
-                    <h4 className={style.title}><i class='fas fa-user'></i> AUTHORS</h4>
+                    <h4 className={style.title}><i class='fas fa-user'></i> AUTHORS ({this.state.authors.length})</h4>
                     <Authors authors={this.state.authors} />
                 </Container>
             </div>
