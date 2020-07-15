@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './AuthorComponents.css';
+import styles from './AuthorComponents.module.css';
 
 import { Row, Col, CardPanel } from 'react-materialize';
 
@@ -13,7 +13,7 @@ const AuthorAddress = ({ street, city, zipcode, lat, lng }) => {
         s={12}
        
       >
-        <CardPanel className="teal authorAddress__card">
+        <CardPanel className={`${styles.card} teal`}>
           <span className="white-text">
             <h5><i class="fa fa-address-card"></i> ADDRESS</h5>
             <h6><i class="fa fa-street-view"></i> {street}</h6>

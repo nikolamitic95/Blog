@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './AuthorComponents.css'
-
 import { Row, Col, CardPanel } from 'react-materialize';
 import { AiOutlineFileText } from 'react-icons/ai';
 import { GiModernCity } from 'react-icons/gi';
