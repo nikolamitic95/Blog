@@ -6,7 +6,7 @@ DEMO: [Blog App](https://nikolamitic95.github.io/Blog/#/)
 
 ## Stack
 
-Language: HTML5, CSS3, JS(ES6+) <br/>
-Library: React, Materialize <br/>
-Package Manager: npm <br/>
-Deployment: GitHub Pages 
+* Language: HTML5, CSS3, JS(ES6+) <br/>
+* Library: React, Materialize <br/>
+* Package Manager: npm <br/>
+* Deployment: GitHub Pages 
